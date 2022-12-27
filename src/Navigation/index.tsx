@@ -15,21 +15,32 @@ import Tag from "../Components/Tag";
 
 const Stack = createStackNavigator();
 
-export default function AppNavigation() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="BottomSheet" component={BottomSheet} />
-        <Stack.Screen name="CheckBox" component={CheckBox} />
-        <Stack.Screen name="CollapsibleCard" component={CollapsibleCard} />
-        <Stack.Screen name="ColorPicker" component={ColorPicker} />
-        <Stack.Screen name="IconPicker" component={IconPicker} />
-        <Stack.Screen name="ModalInput" component={ModalInput} />
-        <Stack.Screen name="RadioGroup" component={RadioGroup} />
-        <Stack.Screen name="Separator" component={Separator} />
-        <Stack.Screen name="Tag" component={Tag} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+export default class AppNavigation extends React.Component  {
+
+  componentDidMount() {
+    console.log('ok');
+  }
+
+  render() {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false
+          }}>
+          <Stack.Screen name="Home1" component={Home} />
+          <Stack.Screen name="BottomSheet" component={BottomSheet} />
+          <Stack.Screen name="CheckBox" component={CheckBox} />
+          <Stack.Screen name="CollapsibleCard" component={CollapsibleCard} />
+          <Stack.Screen name="ColorPicker" component={ColorPicker} />
+          <Stack.Screen name="IconPicker" component={IconPicker} />
+          <Stack.Screen name="ModalInput" component={ModalInput} />
+          <Stack.Screen name="RadioGroup" component={RadioGroup} />
+          <Stack.Screen name="Separator" component={Separator} />
+          <Stack.Screen name="Tag" component={Tag} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  };
 }
+
